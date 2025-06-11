@@ -8,23 +8,28 @@ const Projects: React.FC = () => {
       description:
         "React Native app for ticket booking and user event management.",
       link: "https://www.ticketnation.ph",
+      tags: ["React Native", "Mobile", "TailwindCSS"],
     },
     {
       title: "Gratchi's Getaway",
-      description: "Online reservation system for nature resort and events.",
+      description:
+        "Next.js web app for online resort reservations and event management with GraphQL backend.",
       link: "https://www.gratchisgetaway.com",
+      tags: ["Next.js", "GraphQL", "Booking", "TailwindCSS"],
     },
     {
       title: "Curamei",
       description:
         "Medical document management platform with modular React components.",
       link: "#",
+      tags: ["React", "GraphQL", "Medical Tech"],
     },
     {
       title: "Pahiram.ph",
       description:
         "Rental management dashboard with inventory and user profiles.",
       link: "https://www.pahiram.ph",
+      tags: ["React", "Node.js", "Dashboard", "MongoDB"],
     },
   ];
 
@@ -54,7 +59,30 @@ const Projects: React.FC = () => {
               <h3 className="text-xl font-semibold">{project.title}</h3>
               <ExternalLink className="w-5 h-5 text-blue-400" />
             </div>
-            <p className="text-gray-300">{project.description}</p>
+
+            <p className="text-gray-300 mb-4">{project.description}</p>
+
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag, tagIndex) => {
+                let bgClass = "bg-blue-600/20 text-blue-300";
+                if (tag === "GraphQL") bgClass = "bg-pink-500/20 text-pink-300";
+                if (tag === "Next.js") bgClass = "bg-gray-700 text-white";
+                if (tag === "React Native")
+                  bgClass = "bg-purple-600/20 text-purple-300";
+                if (tag === "MongoDB")
+                  bgClass = "bg-green-600/20 text-green-300";
+                if (tag === "Node.js") bgClass = "bg-lime-600/20 text-lime-300";
+
+                return (
+                  <span
+                    key={tagIndex}
+                    className={`text-sm px-3 py-1 rounded-full ${bgClass}`}
+                  >
+                    {tag}
+                  </span>
+                );
+              })}
+            </div>
           </motion.a>
         ))}
       </div>
