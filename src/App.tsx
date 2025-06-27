@@ -5,12 +5,14 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import ScrollToTop from "./ScrollToTop";
 
 const App = () => {
   return (
     <div className="min-h-screen flex flex-col bg-[#0f172a] text-white">
       <Header />
       <main className="flex-1">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
