@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
       description:
         "Medical document management platform with modular React components.",
       link: "#",
-      tags: ["React", "GraphQL", "Medical Tech"],
+      tags: ["React", "REST", "Redux", "Medical Tech"],
     },
     {
       title: "Pahiram.ph",
